@@ -51,6 +51,14 @@ const dateTime = () => {
 
 }
 
+app.get("/", function (req, res) {
+
+        res.json({
+            output: "Homepage"
+        });
+
+  });
+
 app.get("/getAllFiles", function (req, res) {
     let filesFolders = [];
     let dir = './testFolder/';
