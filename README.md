@@ -1,2 +1,6 @@
 # NodeJS-Create-file-with-text
-Create a file with sample text as current Date time in NodeJS
+We have created Backend and Frontend sever where backend opens API endpoints for frontend to create new folder and files. Frontend also fetches all the files availble inside folder.
+
+**Backend Server hosted at :** [https://file-folder-create.herokuapp.com/](https://file-folder-create.herokuapp.com/)
+
+**Frontend Server hosted at :** [https://file-folder-create.netlify.app/](https://file-fo
