@@ -1,7 +1,7 @@
 var urlHistory = [];
 var currentURL ='';
 async function getAllFiles() {
-    currentURL = 'http://localhost:3000/getAllFiles';
+    currentURL = 'https://file-folder-create.herokuapp.com/getAllFiles';
     urlHistory.push(currentURL);
     let response = await fetch(currentURL);
     let data = await response.text();
@@ -12,8 +12,8 @@ async function getAllFiles() {
 
 async function getFiles(folderName) {
 
-    if(urlHistory.length == 1 && urlHistory[0] == 'http://localhost:3000/getAllFiles'){
-        currentURL = 'http://localhost:3000/getAllFiles?path='+folderName;
+    if(urlHistory.length == 1 && urlHistory[0] == 'https://file-folder-create.herokuapp.com/getAllFiles'){
+        currentURL = 'https://file-folder-create.herokuapp.com/getAllFiles?path='+folderName;
     } else{
         currentURL = `${urlHistory[urlHistory.length - 1]}/${folderName}`;
     }
@@ -32,7 +32,7 @@ async function returnBack() {
     let data = await response.text();
     let parsedData = JSON.parse(data).data;
     console.log(parsedData);
-    if(currentURL == 'http://localhost:3000/getAllFiles'){
+    if(currentURL == 'https://file-folder-create.herokuapp.com/getAllFiles'){
         displayFiles (parsedData);
     } else{
         displayFiles (parsedData, true);
@@ -46,7 +46,7 @@ async function createNewFolder() {
     let data = await response.text();
     let parsedData = JSON.parse(data).data;
     console.log(parsedData);
-    if(currentURL == 'http://localhost:3000/getAllFiles'){
+    if(currentURL == 'https://file-folder-create.herokuapp.com/getAllFiles'){
         displayFiles (parsedData);
     } else{
         displayFiles (parsedData, true);
@@ -60,7 +60,7 @@ async function createNewFile() {
     let data = await response.text();
     let parsedData = JSON.parse(data).data;
     console.log(parsedData);
-    if(currentURL == 'http://localhost:3000/getAllFiles'){
+    if(currentURL == 'https://file-folder-create.herokuapp.com/getAllFiles'){
         displayFiles (parsedData);
     } else{
         displayFiles (parsedData, true);
