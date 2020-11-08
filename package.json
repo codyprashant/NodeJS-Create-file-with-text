@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-create-file-with-text",
+  "version": "1.0.0",
+  "description": "Creating file with Text in specific folder ushing NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codyprashant/NodeJS-Create-file-with-text.git"
+  },
+  "author": "Prashant Gupta (codyPrashant)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codyprashant/NodeJS-Create-file-with-text/issues"
+  },
+  "homepage": "https://github.com/codyprashant/NodeJS-Create-file-with-text#readme"
+}
