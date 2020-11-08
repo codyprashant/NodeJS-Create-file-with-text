@@ -1,8 +1,10 @@
 var urlHistory = [];
 var currentURL ='';
+const spinner = document.getElementById("spinner");
 async function getAllFiles() {
     currentURL = 'https://file-folder-create.herokuapp.com/getAllFiles';
     urlHistory.push(currentURL);
+    spinner.removeAttribute('hidden');
     let response = await fetch(currentURL);
     let data = await response.text();
     let parsedData = JSON.parse(data).data;
@@ -18,6 +20,7 @@ async function getFiles(folderName) {
         currentURL = `${urlHistory[urlHistory.length - 1]}/${folderName}`;
     }
     urlHistory.push(currentURL);
+    spinner.removeAttribute('hidden');
     let response = await fetch(currentURL);
     let data = await response.text();
     let parsedData = JSON.parse(data).data;
@@ -28,6 +31,7 @@ async function getFiles(folderName) {
 async function returnBack() {
     urlHistory.pop();
     currentURL = urlHistory[urlHistory.length - 1];
+    spinner.removeAttribute('hidden');
     let response = await fetch(currentURL);
     let data = await response.text();
     let parsedData = JSON.parse(data).data;
@@ -40,7 +44,8 @@ async function returnBack() {
 }
 
 async function createNewFolder() {
-    let tempURL = currentURL.replace("getAllFiles", "createFolder")
+    let tempURL = currentURL.replace("getAllFiles", "createFolder");
+    spinner.removeAttribute('hidden');
     let response1 = await fetch(tempURL);
     let response = await fetch(currentURL);
     let data = await response.text();
@@ -54,7 +59,8 @@ async function createNewFolder() {
 }
 
 async function createNewFile() {
-    let tempURL = currentURL.replace("getAllFiles", "createNewFile")
+    let tempURL = currentURL.replace("getAllFiles", "createNewFile");
+    spinner.removeAttribute('hidden');
     let response1 = await fetch(tempURL);
     let response = await fetch(currentURL);
     let data = await response.text();
@@ -115,6 +121,7 @@ function displayFiles (parsedData, insideFolder = false){
             document.getElementById('fileList').append(list);
         }
     }
+    spinner.setAttribute('hidden', '');
 }
 
 getAllFiles();
